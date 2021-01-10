@@ -1,0 +1,47 @@
+.add-news-form {
+  width: calc(100% - 40px);
+  max-width: 800px;
+  background-color: #6a1b9a0d;
+  margin: 20px;
+  box-shadow: 0px 0px 4px #6a1b9a;
+}
+
+.add-news-form:hover {
+  box-shadow: 0px 0px 4px #6a1b9a;
+}
+
+.row {
+  margin-bottom: 0;
+}
+
+#textarea1 {
+  min-height: 150px;
+  border-color: #76369d;
+  padding: 10px;
+}
+
+#input-css, #input-csss {
+  border-color: #76369d;
+}
+
+#textarea1::placeholder,
+#input-css::placeholder,
+#input-csss::placeholder {
+  color: #2b2b2b !important;
+}
+
+textarea.materialize-textarea:focus:not([readonly]),
+input[type="text"]:not(.browser-default):focus:not([readonly]) {
+  border-bottom: 2px solid #691b9abf;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.create-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.create-btn button:hover {
+  box-shadow: 0 0 4px black;
+}

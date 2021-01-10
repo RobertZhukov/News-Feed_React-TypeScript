@@ -1,0 +1,7 @@
+.news-page {
+    margin-bottom: 60px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
