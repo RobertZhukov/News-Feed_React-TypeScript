@@ -1,7 +1,9 @@
 html {
-    background-color: #6a1b9a0f;
+  background-color: #6a1b9a0f;
 }
 
-a:hover, button:hover, i:hover {
-	cursor: pointer;
+a:hover,
+button:hover,
+i:hover {
+  cursor: pointer;
 }

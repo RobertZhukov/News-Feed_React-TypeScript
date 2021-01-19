@@ -1,55 +1,43 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import AddNewsForm from "../../components/AddNewsForm/AddNewsForm";
 import CurrentNews from "../../components/CurrentNews/CurrentNews";
+import { IEditNews, INews, INewsPage } from "../../interfaces";
 import "./NewsPage.css";
 
-interface INews {
-  newsText: string;
-  newsTitle: string;
-  newsAuthor: string;
-  id: number;
-  editNews: boolean;
-}
-
 interface INewsPageProps {
-  searchWord: string;
+  newsPage: INewsPage
+  addNewsHandler(news: INews): void;
+  removeNewsHandler(id: number): void;
+  editNewsHandler(editNews: IEditNews): void;
 }
 
-const NewsPage: React.FC = (props) => {
-  const [newsArray, setNewsArray] = useState<INews[]>([]);
-
-  useEffect(() => {
-    const saved = JSON.parse(localStorage.getItem("newsArray") || "[]");
-    setNewsArray(saved);
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("newsArray", JSON.stringify(newsArray));
-  }, [newsArray]);
-
-  const newsArrayHandler = (news: INews) => {
-    setNewsArray((prev) => [news, ...prev]);
-  };
+const NewsPage: React.FC<INewsPageProps> = ({
+  newsPage,
+  addNewsHandler,
+  removeNewsHandler,
+  editNewsHandler
+}) => {
 
   const removeHandler = (id: number) => {
     const confirmRemove = window.confirm("Are you whant delete this task?");
 
     if (confirmRemove) {
-      setNewsArray((prev) => prev.filter((news) => news.id !== id));
+      removeNewsHandler(id);
     }
   };
-
-  const editHandler = (newText: string) => {
-    console.log("in the development");
+  
+  const editHandler = (e: string, id: number) => {
+	let editNews = { e, id }
+	editNewsHandler(editNews)
   };
 
   return (
     <div className="news-page">
-      <AddNewsForm onAddHandler={newsArrayHandler} />
+      <AddNewsForm onAddHandler={addNewsHandler} />
       <CurrentNews
-        onNewsArray={newsArray}
         onRemove={removeHandler}
         onEdit={editHandler}
+        newsData={newsPage.newsData}
       />
     </div>
   );

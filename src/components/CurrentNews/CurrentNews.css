@@ -17,7 +17,7 @@
 }
 
 .title-news {
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 400;
   margin: 0;
 }
@@ -34,10 +34,10 @@
 }
 
 .news-icons {
-    align-items: center;
-    justify-content: space-between;
-	display: flex;
-	margin-top: 15px;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  margin-top: 15px;
 }
 
 .news-icons .i-edit {
@@ -59,32 +59,39 @@
 }
 
 .not-news {
-	color: #e22b33;
-    font-size: 17px;
-	font-weight: 500;
-	text-align: center;
-	box-shadow: 2px 2px 6px #c10906;
-	background-color: #fdfdfd;
-	border-radius: 0px;
-	padding: 20px;
-	margin: 15px 10px 0 10px;
-	max-width: 1000px;
-	width: calc(100% - 20px);
+  color: #e22b33;
+  font-size: 17px;
+  font-weight: 500;
+  text-align: center;
+  box-shadow: 2px 2px 6px #c10906;
+  background-color: #fdfdfd;
+  border-radius: 0px;
+  padding: 20px;
+  margin: 15px 10px 0 10px;
+  max-width: 1000px;
+  width: calc(100% - 20px);
 }
 
 .news-title {
-    font-family: ui-sans-serif;
-    text-align: center;
-    font-size: 23px;
-	font-weight: 500;
-	margin: 0 10px 10px 10px;
+  font-family: ui-sans-serif;
+  text-align: center;
+  font-size: 23px;
+  font-weight: 500;
+  margin: 0 10px 10px 10px;
 }
 
 .news-author {
-    font-size: 12px;
-	font-weight: 500;
-	max-width: 180px;
-	background-color: #661d921f;
-    border-radius: 6px;
-    padding: 4px 8px 6px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  max-width: 200px;
+  background-color: #661d921f;
+  border-radius: 6px;
+  padding: 4px 8px 6px 8px;
+}
+
+.news-text:focus {
+  box-shadow: 0px 1px 5px #6a1b9b;
+  border: 2px solid hsla(277, 70%, 36%, 0.639);
+  padding: 10px;
+  outline: none;
 }

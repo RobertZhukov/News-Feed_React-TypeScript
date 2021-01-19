@@ -1,43 +1,23 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
-
-interface INews {
-	newsText: string;
-	newsTitle: string;
-	newsAuthor: string;
-	id: number;
-	editNews: boolean;
-  }
-
 interface INavbarProps {
-	onSearchWord(searchWord: string): void
+  searchWord: string;
+  searchWordHandler(e: React.ChangeEvent<HTMLInputElement>): void;
+  searchNewsHandler(): void;
 }
 
-const Navbar: React.FC = (props) => {
-
-	//const newsArray = JSON.parse(localStorage.getItem("newsArray") || "[]");
-
-	//const [newsFilterArray, setNewsFilterArray] = useState<INews[]>([...newsArray]);
-	const [searchWord, setSearchWord] = useState("")
-
-	/* useEffect(() => {
-		localStorage.setItem("newsFilterArray", JSON.stringify(newsFilterArray));
-	  }, [newsFilterArray]);
- */
-	/* const searchHandler = () => {
-		let newArray = newsFilterArray.filter((news) => news.newsText === searchWord)
+const Navbar: React.FC<INavbarProps> = ({
+  searchWord,
+  searchWordHandler,
+  searchNewsHandler,
+}) => {
 	
-		if(newsArray) {
-			console.log(newArray)
-			//setNewsFilterArray(newArray)
-		}
-	  } */
-
-	const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-		setSearchWord(e.target.value)
-	  };
+  const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    searchWordHandler(e);
+    searchNewsHandler();
+  };
 
   return (
     <>
@@ -46,18 +26,16 @@ const Navbar: React.FC = (props) => {
           <div className="search col s12 m4 l3">
             <i className="material-icons search-icon">search</i>
             <input
-			  id="icon_prefix2"
-			  type="text"
-			  className="materialize-textarea"
-			  placeholder="Input news"
-			  value={searchWord}
-			  onChange={changeHandler}
+              id="icon_prefix2"
+              type="text"
+              className="materialize-textarea"
+              placeholder="Input news"
+              value={searchWord}
+              onChange={changeHandler}
             ></input>
           </div>
           <div className="logo-brand col s12 m4 l4">
-            <a href="/">
-              News feed
-            </a>
+            <a href="/">News feed</a>
           </div>
           <div className="menu col s12 m4 l5">
             <ul>

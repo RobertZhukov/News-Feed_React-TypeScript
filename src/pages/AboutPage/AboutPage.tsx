@@ -7,7 +7,7 @@ const AboutPage: React.FC = () => {
 
   return (
     <div className="about">
-      <h1>About Programm</h1>
+      <h2>About Programm</h2>
       <h5>
         While developing this learning application, I got acquainted with:
       </h5>

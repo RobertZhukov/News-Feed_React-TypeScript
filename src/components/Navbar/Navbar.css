@@ -11,13 +11,13 @@
 }
 
 #nav-menu {
-	height: auto !important;
-  }
+  height: auto !important;
+}
 
 .menu {
   background-color: #6a1b9a;
   display: flex;
-    justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 nav ul a {
@@ -26,60 +26,59 @@ nav ul a {
 }
 
 .search {
-    display: flex;
-	align-items: center;
-	background-color: #efe6f4;
-	height: inherit;
+  display: flex;
+  align-items: center;
+  background-color: #efe6f4;
+  height: inherit;
 }
 
 .search-icon {
-    color: #6a1b9a;
-    margin-left: 10px;
+  color: #6a1b9a;
+  margin-left: 10px;
 }
 
 #icon_prefix2 {
-	margin: 10px;
-	border-color: #6a1b9a;
+  margin: 10px;
+  border-color: #6a1b9a;
 }
 
 #icon_prefix2::placeholder {
-    color: #6a1b9a;
-    font-size: 13px;
-    font-weight: 500;
+  color: #6a1b9a;
+  font-size: 13px;
+  font-weight: 500;
 }
-
 
 /*MEDIA*/
 @media (min-width: 992px) {
-	.logo-brand {
-		font-size: 35px;
-		background-color: #6a1b9a;
-		text-align: end;
-	}
+  .logo-brand {
+    font-size: 35px;
+    background-color: #6a1b9a;
+    text-align: end;
+  }
 }
 
 @media (max-width: 677px) {
-	nav ul a {
-		font-size: 17px !important;
-		padding: 0 14px !important;
-	}
+  nav ul a {
+    font-size: 17px !important;
+    padding: 0 14px !important;
+  }
 }
 
 @media (max-width: 600px) {
-	.menu {
-		background-color: #6a1b9a;
-		display: flex;
-		  justify-content: center;
-	  }
+  .menu {
+    background-color: #6a1b9a;
+    display: flex;
+    justify-content: center;
+  }
 
-	  nav ul a {
-		font-size: 19px !important;
-		padding: 0 32px !important;
-	}
+  nav ul a {
+    font-size: 19px !important;
+    padding: 0 32px !important;
+  }
 
-	nav {
-		line-height: 45px;
-	}
+  nav {
+    line-height: 45px;
+  }
 }
 
 @media (max-width: 425px) {

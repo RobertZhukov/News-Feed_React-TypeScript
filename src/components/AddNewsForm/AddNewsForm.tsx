@@ -1,25 +1,18 @@
 import React, { useState } from "react";
+import { INews } from "../../interfaces";
 import "./AddNewsForm.css";
 
 interface INewsArrayProps {
-  onAddHandler(news: object): void;
+  onAddHandler(news: INews): void;
 }
 
-interface INews {
-  newsText: string;
-  newsTitle: string;
-  newsAuthor: string;
-  id: number;
-  editNews: boolean;
-}
-
-const AddNewsForm: React.FC<INewsArrayProps> = (props) => {
+const AddNewsForm: React.FC<INewsArrayProps> = ({ onAddHandler }) => {
   const [newNews, setNewNews] = useState<INews>({
     newsText: "",
     newsTitle: "",
     newsAuthor: "",
-	id: 10065456116556,
-	editNews: false
+    id: 10065456116556,
+    editNews: false,
   });
 
   const addHandler = (event: React.MouseEvent) => {
@@ -29,8 +22,8 @@ const AddNewsForm: React.FC<INewsArrayProps> = (props) => {
       newsText: newNews.newsText,
       newsTitle: newNews.newsTitle,
       newsAuthor: newNews.newsAuthor,
-	  id: Date.now(),
-	  editNews: false
+      id: Date.now(),
+      editNews: false,
     };
 
     if (
@@ -38,8 +31,7 @@ const AddNewsForm: React.FC<INewsArrayProps> = (props) => {
       newNews.newsAuthor.length &&
       newNews.newsTitle.length
     ) {
-		console.log(news)
-      props.onAddHandler(news);
+      onAddHandler(news);
       setNewNews((prev) => {
         prev.newsText = "";
         prev.newsTitle = "";
@@ -96,23 +88,6 @@ const AddNewsForm: React.FC<INewsArrayProps> = (props) => {
                 placeholder="Enter the text of the news..."
                 name="newsText"
               ></textarea>
-              {/* <form action="#">
-                <div className="file-field input-field">
-                  <div className="btn">
-                    <span>File</span>
-                    <input
-                      type="file"
-                    />
-                  </div>
-                  <div className="file-path-wrapper">
-                    <input
-                      className="file-path validate"
-                      type="text"
-                      placeholder="Upload file"
-                    />
-                  </div>
-                </div>
-              </form> */}
               <div className="create-btn">
                 <button
                   className="btn purple darken-3"
